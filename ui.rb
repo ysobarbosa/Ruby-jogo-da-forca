@@ -1,5 +1,7 @@
 def avisa_chute_efetuado chute
-  puts "Você já chutou essa #{chute}"
+  puts "\n"
+  puts "Você já chutou #{chute}"
+  puts "\n"
 end
 
 def avisa_letra_nao_encontrada
@@ -44,13 +46,17 @@ def nao_quer_jogar?
   nao_quero_jogar = quero_jogar.upcase == "N"
 end
 
-nome = da_boas_vindas
+# nome = da_boas_vindas
 
-# UI
-def pede_um_chute(chutes,erros)
+def cabecalho_de_tentativa chutes, erros, mascara
   puts "\n\n"
+  puts "A palavra secreta é #{mascara}"
   puts "Erros até agora: #{erros}"
   puts "Chutees até agora: #{chutes}"
+end
+
+# UI
+def pede_um_chute
   puts "Entre com uma letra ou uma palavra"
   chute = gets.strip
   puts "Será que você acertou? Você chutou #{chute}"
